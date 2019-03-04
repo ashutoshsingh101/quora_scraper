@@ -5,10 +5,11 @@ services:
 # container defines name of container 
 # path of Dockerfile(just directory)
 # which port of host is mapped to container
-  context: .
-      dockerfile: Dockerfile
+
     container_name: quorascraper
-    build: .             
+    build:
+      context: .
+      dockerfile: Dockerfile           
     ports:               
       - "3000:3000"  
 # dependencies  
@@ -20,7 +21,7 @@ services:
 #in case you want to use chrome you can put image of that
   firefox-container:
     container_name: firefox-container
-    image: selenium/standalone-firefox:latest
+    image: selenium/standalone-firefox:
     volumes:
       - /dev/shm:/dev/shm
     ports:
