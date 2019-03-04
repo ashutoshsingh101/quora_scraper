@@ -22,6 +22,7 @@ RUN  apt-get update -y && \
 RUN apt-get install -y p7zip \
     zip \
     unzip \
+    gnupg2 \
     && rm -rf /var/lib/apt/lists/*
 
 
