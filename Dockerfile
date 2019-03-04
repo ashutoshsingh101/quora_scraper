@@ -14,7 +14,24 @@ RUN apt-get update && apt-get install -yq
 RUN apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install zip
+RUN  apt-get update -y && \
+     apt-get upgrade -y && \
+     apt-get dist-upgrade -y && \
+     apt-get -y autoremove && \
+     apt-get clean
+RUN apt-get install -y p7zip \
+    p7zip-full \
+    unace \
+    zip \
+    unzip \
+    xz-utils \
+    sharutils \
+    uudeview \
+    mpack \
+    arj \
+    cabextract \
+    file-roller \
+    && rm -rf /var/lib/apt/lists/*
 
 
 RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz" -O /tmp/geckodriver.tgz \
