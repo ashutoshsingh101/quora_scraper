@@ -110,17 +110,17 @@ class Sel(unittest.TestCase):
 		# 		driver.close()
 		# except Exception as e:
 		# 	print(str(e)+" -- "+'Error on line {}'.format(sys.exc_info()[-1].tb_lineno))
-		for topic in topics:
-			print("------------------------------topic----------------------------------------------")
-			print(topic)
-			path = os.path.join(os.getcwd(),"data")
-			topic_dir = os.path.join(path, str(topic))
-			answer_related_questions_getter = fetch_answer_and_related_questions.fetch_answer_and_related_questions(topic_dir,topic)
-			answer_related_questions_getter.fetch_related_questions_and_links()
-			print("------------------------------changing topic----------------------------------------------")
-			print("\n")
-		print("+++++++++++++++++++++++++++++++related complete++++++++++++++++++++++++++++++++++++++++")
-		print("\n\n\n\n\n\n\n\n\n\n\n\n")
+		# for topic in topics:
+		# 	print("------------------------------topic----------------------------------------------")
+		# 	print(topic)
+		# 	path = os.path.join(os.getcwd(),"data")
+		# 	topic_dir = os.path.join(path, str(topic))
+		# 	answer_related_questions_getter = fetch_answer_and_related_questions.fetch_answer_and_related_questions(topic_dir,topic)
+		# 	answer_related_questions_getter.fetch_related_questions_and_links()
+		# 	print("------------------------------changing topic----------------------------------------------")
+		# 	print("\n")
+		# print("+++++++++++++++++++++++++++++++related complete++++++++++++++++++++++++++++++++++++++++")
+		# print("\n\n\n\n\n\n\n\n\n\n\n\n")
 		for topic in topics:
 			print("------------------------------topic----------------------------------------------")
 			print(topic)
