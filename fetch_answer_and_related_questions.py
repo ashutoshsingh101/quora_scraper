@@ -94,7 +94,7 @@ class fetch_answer_and_related_questions:
 		df = pd.read_excel(str(self.topic_dir)+"/"+str(self.topic)+"_links.xlsx",sheet_name="Sheet1")
 		questions = df.loc[:,0].values.tolist()
 		links = df.loc[:,1].values.tolist()
-		driver =  webdriver.Chromedriver()
+		driver =  webdriver.Firefox()
 		print("topic: "+str(self.topic))
 		print("number_of_questions: "+str(len(questions)))
 		i = 0
@@ -152,7 +152,7 @@ class fetch_answer_and_related_questions:
 
 		questions_with_answer_links_and_views = []
 		count = 0
-		driver =  webdriver.Chromedriver()
+		driver =  webdriver.Firefox()
 		for key,link in zip(questions,links):
 			count+=1
 			print("\n\n\n\n\n\n\n\n\n\n\n")
