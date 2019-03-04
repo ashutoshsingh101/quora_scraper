@@ -12,7 +12,8 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN apt-get update && apt-get install -yq
 
 RUN apt-get install -y wget \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get install -y unzip
 
 RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz" -O /tmp/geckodriver.tgz \
     && tar zxf /tmp/geckodriver.tgz -C /usr/bin/ \
