@@ -124,7 +124,7 @@ class Sel(unittest.TestCase):
 		for topic in topics:
 			print("------------------------------topic----------------------------------------------")
 			print(topic)
-			path = os.path.join(os.getcwd(),"data")
+			path = "./data"
 			topic_dir = os.path.join(path, str(topic))
 			answer_related_questions_getter = fetch_answer_and_related_questions.fetch_answer_and_related_questions(topic_dir,topic)
 			answer_related_questions_getter.run()
