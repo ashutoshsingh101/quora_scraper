@@ -30,9 +30,15 @@ RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.24.0/ge
     && rm /tmp/geckodriver.tgz
 
 # chromeDriver v2.35
-RUN wget -q "https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip" -O /tmp/chromedriver.zip \
-    && unzip /tmp/chromedriver.zip -d /usr/bin/ \
-    && rm /tmp/chromedriver.zip
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+RUN apt-get -y update
+RUN apt-get install -y google-chrome-stable
+
+# install chromedriver
+RUN apt-get install -yqq unzip
+RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
+RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
 # create symlinks to chromedriver and geckodriver (to the PATH)
 RUN ln -s /usr/bin/geckodriver /usr/bin/chromium-browser \
