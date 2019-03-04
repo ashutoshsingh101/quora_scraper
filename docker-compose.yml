@@ -20,7 +20,7 @@ services:
 # pulls firefox image from docker-hub
 #in case you want to use chrome you can put image of that
   firefox-container:
-    container_name: firefox-container
+    container_id: c08f7e4c87c4
     image: selenium/standalone-firefox:latest
     volumes:
       - /dev/shm:/dev/shm
