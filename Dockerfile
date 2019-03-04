@@ -1,3 +1,5 @@
+FROM python:3.6-slim
+
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
