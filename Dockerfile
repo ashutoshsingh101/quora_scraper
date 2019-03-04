@@ -25,7 +25,7 @@ RUN apt-get install -y p7zip \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.24.0-linux64.tar.gz" -O /tmp/geckodriver.tgz \
+RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz" -O /tmp/geckodriver.tgz \
     && tar zxf /tmp/geckodriver.tgz -C /usr/bin/ \
     && rm /tmp/geckodriver.tgz
 
