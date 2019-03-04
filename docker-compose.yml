@@ -1,5 +1,5 @@
 # version of compose 
-version: "2"
+version: "3.1"
 services:        
   app:
 # container defines name of container 
