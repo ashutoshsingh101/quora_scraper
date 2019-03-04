@@ -14,13 +14,13 @@ services:
       - "3000:3000"  
 # dependencies  
     depends_on:
-      - stupefied_euclid
+      - firefox-container
     volumes:
       - .:/app
 # pulls firefox image from docker-hub
 #in case you want to use chrome you can put image of that
   firefox-container:
-    container_name: stupefied_euclid
+    container_name: firefox-container
     image: selenium/standalone-firefox:latest
     volumes:
       - /dev/shm:/dev/shm
