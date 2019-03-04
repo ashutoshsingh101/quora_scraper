@@ -12,8 +12,8 @@ services:
 # dependencies  
     depends_on:
       - firefox-container
-    volumes:             // maps so changes to these can be seen
-      - .:/app/
+    volumes:
+      - .:/app
 # pulls firefox image from docker-hub
 #in case you want to use chrome you can put image of that
   firefox-container:
