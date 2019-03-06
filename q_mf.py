@@ -21,8 +21,8 @@ import sys
 import os
 import fetch_answer_and_related_questions
 
-class Sel(unittest.TestCase):
-	def setUp(self):
+class Sel:
+	def __init__(self):
 		# self.driver = webdriver.Firefox()
 		self.base_url = "https://www.quora.com"
 		self.verificationErrors = []
@@ -121,7 +121,7 @@ class Sel(unittest.TestCase):
 		# 	print("\n")
 		# print("+++++++++++++++++++++++++++++++related complete++++++++++++++++++++++++++++++++++++++++")
 		# print("\n\n\n\n\n\n\n\n\n\n\n\n")
-		for topic in topics:
+		for topic in topics[2:]:
 			print("------------------------------topic----------------------------------------------")
 			print(topic)
 			path = "./data"
@@ -135,4 +135,5 @@ class Sel(unittest.TestCase):
 
 
 if __name__ == "__main__":
-	unittest.main()
+	s = Sel()
+	s.test_sel()

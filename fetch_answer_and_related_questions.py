@@ -42,7 +42,7 @@ class fetch_answer_and_related_questions:
 			answer_link_list = dictionary["answer_link_list"]
 			answer_upvote_list = []
 			worksheet.write(row,col,dictionary["ques"])
-			print("number of answers for question number "+str(count)+":"+str(len(answer_link_list)))
+			print("number of answers for question number for topic "+str(self.topic)+" "+str(count)+":"+str(len(answer_link_list)))
 			count_a = 0
 			if len(answer_link_list) > 0:
 				for answer in answer_link_list:
@@ -68,7 +68,7 @@ class fetch_answer_and_related_questions:
 					else:
 						answer_upvote_list.append({"answer":answer_text})
 					count_a = count_a + 1
-					print("answer number "+str(count_a))
+					#print("answer number "+str(count_a))
 					# SORT LIST OF ALL THE ANSWERS FOR EACH QUESTION ACCORDING TO THEIR UPVOTES
 				if len(answer_upvote_list) > 0:
 					sorted_list = list(reversed(answer_upvote_list))
