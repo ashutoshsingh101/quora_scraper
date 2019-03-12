@@ -16,3 +16,10 @@ sudo service elasticsearch status
 # curl -X GET "0.0.0.0:9200/"
 # to edit the configuration
 # sudo nano /etc/elasticsearch/elasticsearch.yml
+
+
+
+# install kibana
+sudo apt-get update && sudo apt-get install kibana
+# sudo nano /etc/kibana/kibana.yml
+
